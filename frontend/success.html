@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #6ef1a9;
+    }
+    h1 {
+      color: #ffffff;
+    }
+    p {
+      font-size: 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+    a {
+      color: #ffffff;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Success!</h1>
+  <p>The URL you attempted to access is safe.</p>
+  <p id="urlDisplay"></p> <!-- Placeholder for displaying the URL -->
+
+  <script>
+    // Retrieve the URL from localStorage
+    const url = localStorage.getItem('url');
+    if (url) {
+        const urlDisplay = document.getElementById('urlDisplay');
+        // Display the URL as a clickable link
+        urlDisplay.innerHTML = `Safe URL: <a href="${url}" target="_blank">${url}</a>`;
+    }
+  </script>
+
+</body>
+</html>

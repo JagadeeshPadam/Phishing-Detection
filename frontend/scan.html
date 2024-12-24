@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera and QR Code Reader</title>
+  <link rel="stylesheet" href="assets/styles.css"> <!-- Path to external CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap.css" />
+  <link href="assets/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="assets/responsive.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+  <style>
+    /* Additional styles for layout */
+    body {
+      display: flex;
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      min-height: 100vh; /* Ensure full height */
+      margin: 0;
+      background-color: #b5caee;
+      color: #ffffff; /* Keep background color */
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row; /* Side-by-side layout */
+      width: 100%;
+      max-width: 1200px; /* Max width for the container */
+    }
+
+    .left-container {
+      flex: 1; /* Takes up equal space */
+      display: flex;
+      justify-content: center; /* Center animation */
+      align-items: center; /* Center animation */
+      padding: 20px; /* Add some padding */
+    }
+
+    .right-container {
+      flex: 1; /* Takes up equal space */
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center items */
+      padding: 30px; /* Add some padding */
+    }
+
+    video {
+      background-color: #ffffff;
+      width: auto; /* Responsive video */
+       /* Max width for the video */
+      height: 200px; /* Maintain aspect ratio */
+      border: 2px solid #2f3437;
+      border-radius: 8px;
+    }
+    button {
+      width: 200px; /* Consistent button width */
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 16px;
+    }
+    #result, #success {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #result {
+      color: red;
+    }
+
+    #success {
+      color: green;
+      display: none; /* Hidden by default */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Container for Animation -->
+    <div class="left-container">
+      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+      <dotlottie-player src="https://lottie.host/3129f762-8564-4c8f-ae60-aa44d6c4f892/ph7G7In4el.json" 
+                        background="transparent" speed="1" 
+                        style="width: 80%; height: auto;" loop autoplay>
+      </dotlottie-player>
+    </div>
+
+    <!-- Right Container for Video and Controls -->
+    <div class="right-container">
+      <video id="camera" autoplay></video>
+      <img id="imageDisplay" src="" style="display: none;">
+      <div id="controls">
+        <button id="startCamera" class="btn btn-primary rounded-pill py-2 px-4 search-button">Start Camera</button>
+        <button id="capturePhoto" class="btn btn-primary rounded-pill py-2 px-4 search-button">Capture Photo</button>
+        <input type="file" id="fileInput" accept="image/*" style="margin: 15px;">
+      </div>
+      <!-- Result Display -->
+      <div id="result">QR Code URL will appear here</div>
+      <div id="success"></div>
+    </div>
+  </div>
+
+  <!-- Include external JavaScript file -->
+  <script src="assets/js/script.js"></script> <!-- Updated path to external JS -->
+</body>
+</html>

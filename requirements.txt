@@ -1,0 +1,14 @@
+Flask==2.2.2
+flask_cors==5.0.0
+imbalanced_learn==0.10.1
+joblib==1.1.1
+matplotlib==3.7.0
+numpy==1.24.3
+numpy==1.23.5
+pandas==1.5.3
+Requests==2.32.3
+scikit_learn==1.2.1
+seaborn==0.13.2
+tensorflow==2.13.0
+tensorflow_intel==2.13.0
+xgboost==2.1.1

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f76c6c;
+    }
+    h1 {
+      color: #ffffff;
+    }
+    p {
+      font-size: 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Warning!</h1>
+  <p>The URL you attempted to access is malicious.</p>
+  <p id="urlDisplay"></p> <!-- Placeholder for displaying the URL -->
+
+  <script>
+    // Retrieve the URL from localStorage
+    const url = localStorage.getItem('url');
+    if (url) {
+        const urlDisplay = document.getElementById('urlDisplay');
+        urlDisplay.textContent = `Malicious URL: ${url}`;
+    }
+  </script>
+
+</body>
+</html>
